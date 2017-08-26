@@ -2,8 +2,7 @@ import {CharacterTokenizer} from './character.tokenizer';
 import {TokenType} from '../../../utils/token.type';
 
 export class OpenParenthesisTokenizer {
-  constructor() {
-    this.tokenizer = new CharacterTokenizer()
+  constructor(private tokenizer = new CharacterTokenizer()) {
   }
 
   tokenize(input, current) {

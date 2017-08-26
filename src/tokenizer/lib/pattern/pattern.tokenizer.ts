@@ -1,4 +1,4 @@
-import {TokenFactory} from '../../../utils/token.factory';
+import {TokenFactory} from "../../../utils/token.factory";
 
 export class PatternTokenizer {
   constructor() {}
@@ -12,7 +12,7 @@ export class PatternTokenizer {
 
   buildToken(type, pattern, input, current) {
     let length = 0;
-    let value = '';
+    let value = "";
     let char = input[current];
     while (char && pattern.test(char)) {
       value += char;

@@ -6,15 +6,15 @@ import {OpenParenthesisTokenizer} from './lib/character/open-parenthesis.tokeniz
 import {CloseParenthesisTokenizer} from './lib/character/close-parenthesis.tokenizer';
 
 export class Tokenizer {
-  constructor() {
-    this.tokenizers = [
-      new OpenParenthesisTokenizer(),
-      new CloseParenthesisTokenizer(),
-      new NumberTokenizer(),
-      new NameTokenizer(),
-      new StringTokenizer(),
-      new WhiteSpaceTokenizer()
-    ];
+
+  constructor(private tokenizers = [
+    new OpenParenthesisTokenizer(),
+    new CloseParenthesisTokenizer(),
+    new NumberTokenizer(),
+    new NameTokenizer(),
+    new StringTokenizer(),
+    new WhiteSpaceTokenizer()
+  ]) {
   }
 
   tokenize(input) {
