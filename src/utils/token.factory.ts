@@ -1,4 +1,4 @@
-import {TokenType} from "./token.type";
+import {TokenType} from './token.type';
 
 export class TokenFactory {
   static nullToken() {
@@ -10,10 +10,10 @@ export class TokenFactory {
   }
 
   static openedParenthesis() {
-    return [ 1, { type: TokenType.PARENTHESIS, value: "(" }];
+    return [ 1, { type: TokenType.PARENTHESIS, value: '(' }];
   }
 
   static closedParenthesis() {
-    return [ 1, { type: TokenType.PARENTHESIS, value: ")" }];
+    return [ 1, { type: TokenType.PARENTHESIS, value: ')' }];
   }
 }

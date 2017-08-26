@@ -1,5 +1,5 @@
-import {CharacterTokenizer} from './character.tokenizer';
 import {TokenType} from '../../../utils/token.type';
+import {CharacterTokenizer} from './character.tokenizer';
 
 export class OpenParenthesisTokenizer {
   constructor(private tokenizer = new CharacterTokenizer()) {

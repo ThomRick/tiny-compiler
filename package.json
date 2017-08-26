@@ -30,16 +30,14 @@
   },
   "nyc": {
     "include": [
-      "src/**/*.ts",
-      "src/**/*.js"
+      "src/**/*.ts"
     ],
     "exclude": [
       "node_modules/",
       "src/**/*.spec.ts"
     ],
     "extension": [
-      ".ts",
-      ".js"
+      ".ts"
     ],
     "require": [
       "ts-node/register"

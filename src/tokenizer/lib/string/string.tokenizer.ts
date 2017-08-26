@@ -17,8 +17,9 @@ export class StringTokenizer {
     let length = 2;
     let char = input[current + charIndex];
     while (char !== '"') {
-      if (char === undefined)
+      if (char === undefined) {
         throw new Error('unterminated string');
+      }
       value += char;
       length++;
       charIndex++;

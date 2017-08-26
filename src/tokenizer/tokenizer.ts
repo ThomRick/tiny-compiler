@@ -1,9 +1,9 @@
-import {NameTokenizer} from './lib/pattern/name.tokenizer';
-import {StringTokenizer} from './lib/string/string.tokenizer';
-import {NumberTokenizer} from './lib/pattern/number.tokenizer';
-import {WhiteSpaceTokenizer} from './lib/white-space/white-space.tokenizer';
-import {OpenParenthesisTokenizer} from './lib/character/open-parenthesis.tokenizer';
 import {CloseParenthesisTokenizer} from './lib/character/close-parenthesis.tokenizer';
+import {OpenParenthesisTokenizer} from './lib/character/open-parenthesis.tokenizer';
+import {NameTokenizer} from './lib/pattern/name.tokenizer';
+import {NumberTokenizer} from './lib/pattern/number.tokenizer';
+import {StringTokenizer} from './lib/string/string.tokenizer';
+import {WhiteSpaceTokenizer} from './lib/white-space/white-space.tokenizer';
 
 export class Tokenizer {
 
@@ -13,25 +13,27 @@ export class Tokenizer {
     new NumberTokenizer(),
     new NameTokenizer(),
     new StringTokenizer(),
-    new WhiteSpaceTokenizer()
+    new WhiteSpaceTokenizer(),
   ]) {
   }
 
   tokenize(input) {
     let current = 0;
-    let tokens = [];
+    const tokens = [];
     while (current < input.length) {
       let tokenized = false;
-      this.tokenizers.forEach(tokenizer => {
-        if (tokenized)
+      this.tokenizers.forEach((tokenizer) => {
+        if (tokenized) {
           return;
-        let [ length, token ] = tokenizer.tokenize(input, current);
-        if(length !== 0) {
+        }
+        const [ length, token ] = tokenizer.tokenize(input, current);
+        if (length !== 0) {
           tokenized = true;
           current += length;
         }
-        if(token)
+        if (token) {
           tokens.push(token);
+        }
       });
     }
     return tokens;

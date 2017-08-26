@@ -19,11 +19,11 @@ export class CEmitter {
   }
 
   emitProgram(node) {
-    return `${ node.body.map(expression => this.emit(expression) + ';\n') }`;
+    return `${ node.body.map((expression) => this.emit(expression) + ';\n') }`;
   }
 
   emitExpression(node) {
-    return `${ node.name }(${ node.params.map(paramNode => this.emit(paramNode)).join(', ') })`;
+    return `${ node.name }(${ node.params.map((paramNode) => this.emit(paramNode)).join(', ') })`;
   }
 
   emitNumber(node) {
