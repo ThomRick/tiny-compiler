@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "nyc mocha src/**/*.spec.ts --require ts-node/register --reporter spec",
+    "test": "nyc mocha src/**/*.spec.ts src/tokenizer/lib/**/*.spec.ts --require ts-node/register --reporter spec",
     "start": "node main.js",
     "lint": "tslint --project tsconfig.json --config tslint.json"
   },
@@ -21,11 +21,34 @@
     "@types/node": "^8.0.25",
     "@types/sinon": "^2.3.3",
     "chai": "^3.5.0",
-    "mocha": "^3.5.0",
-    "nyc": "^11.1.0",
+    "mocha": "^3.4.2",
+    "nyc": "^10.3.2",
     "sinon": "^3.2.1",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.1"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "node_modules/",
+      "src/**/*.spec.ts"
+    ],
+    "extension": [
+      ".ts",
+      ".js"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
   }
 }
