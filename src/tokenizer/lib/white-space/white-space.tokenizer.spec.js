@@ -1,6 +1,6 @@
 import {expect} from 'chai';
-import TokenFactory from '../../../utils/token.factory';
-import WhiteSpaceTokenizer from './white-space.tokenizer';
+import {TokenFactory} from '../../../utils/token.factory';
+import {WhiteSpaceTokenizer} from './white-space.tokenizer';
 
 describe('WhiteSpaceTokenizer', () => {
   describe('#tokenize()', () => {

@@ -1,6 +1,6 @@
-import TokenFactory from '../../../utils/token.factory';
+import {TokenFactory} from '../../../utils/token.factory';
 
-export default class PatternTokenizer {
+export class PatternTokenizer {
   constructor() {}
 
   tokenize(type, pattern, input, current) {

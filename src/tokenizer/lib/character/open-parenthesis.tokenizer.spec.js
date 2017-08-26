@@ -1,7 +1,7 @@
 import {expect} from 'chai';
-import TokenFactory from '../../../utils/token.factory';
-import OpenParenthesisTokenizer from './open-parenthesis.tokenizer';
-import CharacterTokenizer from './character.tokenizer';
+import {TokenFactory} from '../../../utils/token.factory';
+import {OpenParenthesisTokenizer} from './open-parenthesis.tokenizer';
+import {CharacterTokenizer} from './character.tokenizer';
 
 describe('OpenParenthesisTokenizer', () => {
   let tokenizer;

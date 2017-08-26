@@ -1,7 +1,7 @@
-import TokenFactory from '../../../utils/token.factory';
-import TokenType from '../../../utils/token.type';
+import {TokenFactory} from '../../../utils/token.factory';
+import {TokenType} from '../../../utils/token.type';
 
-export default class StringTokenizer {
+export class StringTokenizer {
   constructor() {}
 
   tokenize(input, current) {

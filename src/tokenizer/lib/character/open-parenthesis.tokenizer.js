@@ -1,7 +1,7 @@
-import CharacterTokenizer from './character.tokenizer';
-import TokenType from '../../../utils/token.type';
+import {CharacterTokenizer} from './character.tokenizer';
+import {TokenType} from '../../../utils/token.type';
 
-export default class OpenParenthesisTokenizer {
+export class OpenParenthesisTokenizer {
   constructor() {
     this.tokenizer = new CharacterTokenizer()
   }

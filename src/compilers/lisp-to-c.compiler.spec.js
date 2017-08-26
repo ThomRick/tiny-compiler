@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import LispToCCompiler from './lisp-to-c.compiler';
+import {LispToCCompiler} from './lisp-to-c.compiler';
 
 describe('LispToCCompiler', () => {
   let compiler;

@@ -1,7 +1,7 @@
-import PatternEnum from '../../../utils/pattern.enum';
-import TokenFactory from '../../../utils/token.factory';
+import {PatternEnum} from '../../../utils/pattern.enum';
+import {TokenFactory} from '../../../utils/token.factory';
 
-export default class WhiteSpaceTokenizer {
+export class WhiteSpaceTokenizer {
   constructor() {}
 
   tokenize(input, current) {

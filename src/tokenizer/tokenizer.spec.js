@@ -1,12 +1,12 @@
-import Tokenizer from './tokenizer';
+import {Tokenizer} from './tokenizer';
 import {expect} from 'chai';
-import TokenType from '../utils/token.type';
-import NameTokenizer from './lib/pattern/name.tokenizer';
-import StringTokenizer from './lib/string/string.tokenizer';
-import NumberTokenizer from './lib/pattern/number.tokenizer';
-import WhiteSpaceTokenizer from './lib/white-space/white-space.tokenizer';
-import OpenParenthesisTokenizer from './lib/character/open-parenthesis.tokenizer';
-import CloseParenthesisTokenizer from './lib/character/close-parenthesis.tokenizer';
+import {TokenType} from '../utils/token.type';
+import {NameTokenizer} from './lib/pattern/name.tokenizer';
+import {StringTokenizer} from './lib/string/string.tokenizer';
+import {NumberTokenizer} from './lib/pattern/number.tokenizer';
+import {WhiteSpaceTokenizer} from './lib/white-space/white-space.tokenizer';
+import {OpenParenthesisTokenizer} from './lib/character/open-parenthesis.tokenizer';
+import {CloseParenthesisTokenizer} from './lib/character/close-parenthesis.tokenizer';
 
 
 describe('Tokenizer', () => {

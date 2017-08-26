@@ -1,6 +1,6 @@
 import {expect} from 'chai';
-import StringTokenizer from './string.tokenizer';
-import TokenFactory from '../../../utils/token.factory';
+import {StringTokenizer} from './string.tokenizer';
+import {TokenFactory} from '../../../utils/token.factory';
 
 describe('StringTokenizer', () => {
   describe('#tokenize()', () => {

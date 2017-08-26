@@ -1,6 +1,6 @@
-import TokenFactory from '../../../utils/token.factory';
+import {TokenFactory} from '../../../utils/token.factory';
 
-export default class CharacterTokenizer {
+export class CharacterTokenizer {
   constructor() {}
 
   tokenize(type, value, input, current) {

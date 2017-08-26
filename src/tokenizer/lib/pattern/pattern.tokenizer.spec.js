@@ -1,7 +1,7 @@
-import PatternTokenizer from './pattern.tokenizer';
-import TokenFactory from '../../../utils/token.factory';
-import TokenType from '../../../utils/token.type';
-import PatternEnum from '../../../utils/pattern.enum';
+import {PatternTokenizer} from './pattern.tokenizer';
+import {TokenFactory} from '../../../utils/token.factory';
+import {TokenType} from '../../../utils/token.type';
+import {PatternEnum} from '../../../utils/pattern.enum';
 import {expect} from 'chai';
 
 describe('PatternTokenizer', () => {

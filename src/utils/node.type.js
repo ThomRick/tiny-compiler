@@ -1,4 +1,4 @@
-export default class NodeType {
+export class NodeType {
   static PROGRAM    = 'Program';
   static EXPRESSION = 'CallExpression';
   static STRING     = 'StringLiteral';

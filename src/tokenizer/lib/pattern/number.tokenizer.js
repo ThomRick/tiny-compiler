@@ -1,8 +1,8 @@
-import PatternTokenizer from './pattern.tokenizer';
-import TokenType from '../../../utils/token.type';
-import PatternEnum from '../../../utils/pattern.enum';
+import {PatternTokenizer} from './pattern.tokenizer';
+import {TokenType} from '../../../utils/token.type';
+import {PatternEnum} from '../../../utils/pattern.enum';
 
-export default class NumberTokenizer {
+export class NumberTokenizer {
   constructor() {
     this.tokenizer = new PatternTokenizer();
   }

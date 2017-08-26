@@ -1,6 +1,6 @@
-import NodeType from '../utils/node.type';
+import {NodeType} from '../utils/node.type';
 
-export default class CEmitter {
+export class CEmitter {
   constructor() {}
 
   emit(node) {

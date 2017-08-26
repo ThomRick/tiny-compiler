@@ -1,8 +1,8 @@
-import PatternTokenizer from './pattern.tokenizer';
-import PatternEnum from '../../../utils/pattern.enum';
-import TokenType from '../../../utils/token.type';
+import {PatternTokenizer} from './pattern.tokenizer';
+import {PatternEnum} from '../../../utils/pattern.enum';
+import {TokenType} from '../../../utils/token.type';
 
-export default class NameTokenizer {
+export class NameTokenizer {
   constructor() {
     this.tokenizer = new PatternTokenizer()
   }

@@ -1,11 +1,11 @@
-import NameTokenizer from './lib/pattern/name.tokenizer';
-import StringTokenizer from './lib/string/string.tokenizer';
-import NumberTokenizer from './lib/pattern/number.tokenizer';
-import WhiteSpaceTokenizer from './lib/white-space/white-space.tokenizer';
-import OpenParenthesisTokenizer from './lib/character/open-parenthesis.tokenizer';
-import CloseParenthesisTokenizer from './lib/character/close-parenthesis.tokenizer';
+import {NameTokenizer} from './lib/pattern/name.tokenizer';
+import {StringTokenizer} from './lib/string/string.tokenizer';
+import {NumberTokenizer} from './lib/pattern/number.tokenizer';
+import {WhiteSpaceTokenizer} from './lib/white-space/white-space.tokenizer';
+import {OpenParenthesisTokenizer} from './lib/character/open-parenthesis.tokenizer';
+import {CloseParenthesisTokenizer} from './lib/character/close-parenthesis.tokenizer';
 
-export default class Tokenizer {
+export class Tokenizer {
   constructor() {
     this.tokenizers = [
       new OpenParenthesisTokenizer(),

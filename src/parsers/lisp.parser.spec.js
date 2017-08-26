@@ -1,7 +1,7 @@
 import {expect} from 'chai';
-import LispParser from './lisp.parser';
-import TokenType from '../utils/token.type';
-import NodeType from '../utils/node.type';
+import {LispParser} from './lisp.parser';
+import {TokenType} from '../utils/token.type';
+import {NodeType} from '../utils/node.type';
 
 describe('LispParser', () => {
   let parser;

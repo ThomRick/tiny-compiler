@@ -1,7 +1,7 @@
-import TokenType from '../utils/token.type';
-import NodeType from '../utils/node.type';
+import {TokenType} from '../utils/token.type';
+import {NodeType} from '../utils/node.type';
 
-export default class LispParser {
+export class LispParser {
   constructor() {}
 
   parse(tokens) {

@@ -1,8 +1,8 @@
-import Tokenizer from '../tokenizer/tokenizer';
-import LispParser from '../parsers/lisp.parser';
-import CEmitter from '../emitters/c.emitter';
+import {Tokenizer} from '../tokenizer/tokenizer';
+import {LispParser} from '../parsers/lisp.parser';
+import {CEmitter} from '../emitters/c.emitter';
 
-export default class LispToCCompiler {
+export class LispToCCompiler {
   constructor() {
     this.tokenizer = new Tokenizer();
     this.parser = new LispParser();

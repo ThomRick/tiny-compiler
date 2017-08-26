@@ -1,4 +1,4 @@
-export default class TokenType {
+export class TokenType {
   static PARENTHESIS = 'parenthesis';
   static NUMBER = 'number';
   static NAME = 'name';

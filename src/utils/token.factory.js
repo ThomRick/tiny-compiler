@@ -1,6 +1,6 @@
-import TokenTypeEnum from './token.type';
+import {TokenType} from './token.type';
 
-export default class TokenFactory {
+export class TokenFactory {
   static nullToken() {
     return [ 0, null ];
   }
@@ -10,10 +10,10 @@ export default class TokenFactory {
   }
 
   static openedParenthesis () {
-    return [ 1, { type: TokenTypeEnum.PARENTHESIS, value: '(' }];
+    return [ 1, { type: TokenType.PARENTHESIS, value: '(' }];
   }
 
   static closedParenthesis() {
-    return [ 1, { type: TokenTypeEnum.PARENTHESIS, value: ')' }];
+    return [ 1, { type: TokenType.PARENTHESIS, value: ')' }];
   }
 }

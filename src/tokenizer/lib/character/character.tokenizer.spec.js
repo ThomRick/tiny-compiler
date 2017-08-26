@@ -1,6 +1,6 @@
-import CharacterTokenizer from './character.tokenizer';
-import TokenFactory from '../../../utils/token.factory';
-import TokenType from '../../../utils/token.type';
+import {CharacterTokenizer} from './character.tokenizer';
+import {TokenFactory} from '../../../utils/token.factory';
+import {TokenType} from '../../../utils/token.type';
 import {expect} from 'chai';
 
 describe('CharacterTokenizer', () => {
