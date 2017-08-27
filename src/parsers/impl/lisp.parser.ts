@@ -1,5 +1,5 @@
 import {TokenType} from '../../tokenizer/enums/token-type.enum';
-import {Token} from '../../tokenizer/models/token.model';
+import {AbstractToken} from '../../tokenizer/models/abstract.token';
 import {AbstractNode} from '../models/abstract.node';
 import {ExpressionNode} from '../models/expression.node';
 import {NumberNode} from '../models/number.node';
@@ -10,24 +10,24 @@ import {IParser} from '../parser.interface';
 export class LispParser implements IParser {
   constructor() {}
 
-  public parse(tokens: Token[]): AbstractNode {
+  public parse(tokens: AbstractToken[]): AbstractNode {
     const program = new ProgramNode();
     return this.parseTokensIn(program, tokens);
   }
 
-  private parseTokensIn(node: AbstractNode, tokens: Token[]): AbstractNode {
+  private parseTokensIn(node: AbstractNode, tokens: AbstractToken[]): AbstractNode {
     while (tokens.length !== 0) {
-      const token: Token = tokens.shift();
-      switch (token.type) {
+      const token: AbstractToken = tokens.shift();
+      switch (token.getType()) {
         case TokenType.NUMBER:
-          node.addNode(new NumberNode(token.value));
+          node.addNode(new NumberNode(token.getValue()));
           break;
         case TokenType.STRING:
-          node.addNode(new StringNode(token.value));
+          node.addNode(new StringNode(token.getValue()));
           break;
         case TokenType.PARENTHESIS:
-          if (token.value === '(') {
-            const subName = tokens.shift().value;
+          if (token.getValue() === '(') {
+            const subName = tokens.shift().getValue();
             node.addNode(this.parseExpression(subName, tokens));
           }
           break;
@@ -36,7 +36,7 @@ export class LispParser implements IParser {
     return node;
   }
 
-  private parseExpression(name: string, tokens: Token[]): ExpressionNode {
+  private parseExpression(name: string, tokens: AbstractToken[]): ExpressionNode {
     const expression = new ExpressionNode(name);
     return this.parseTokensIn(expression, tokens) as ExpressionNode;
   }

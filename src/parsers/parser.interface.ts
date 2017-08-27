@@ -1,6 +1,6 @@
-import {Token} from '../tokenizer/models/token.model';
+import {AbstractToken} from '../tokenizer/models/abstract.token';
 import {AbstractNode} from './models/abstract.node';
 
 export interface IParser {
-  parse(tokens: Token[]): AbstractNode;
+  parse(tokens: AbstractToken[]): AbstractNode;
 }

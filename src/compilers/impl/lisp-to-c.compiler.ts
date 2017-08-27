@@ -4,7 +4,7 @@ import {LispParser} from '../../parsers/impl/lisp.parser';
 import {AbstractNode} from '../../parsers/models/abstract.node';
 import {IParser} from '../../parsers/parser.interface';
 import {TokenizerImpl} from '../../tokenizer/impl/tokenizer.impl';
-import {Token} from '../../tokenizer/models/token.model';
+import {AbstractToken} from '../../tokenizer/models/abstract.token';
 import {ITokenizer} from '../../tokenizer/tokenizer.interface';
 import {ICompiler} from '../compiler.interface';
 
@@ -16,7 +16,7 @@ export class LispToCCompiler implements ICompiler {
   ) {}
 
   public compile(input: string): string {
-    const tokens: Token[] = this.tokenizer.tokenize(input) as Token[];
+    const tokens: AbstractToken[] = this.tokenizer.tokenize(input) as AbstractToken[];
     const node: AbstractNode = this.parser.parse(tokens);
     return this.emitter.emit(node);
   }

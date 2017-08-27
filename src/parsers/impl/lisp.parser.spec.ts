@@ -1,6 +1,10 @@
 import {expect} from 'chai';
-import {TokenType} from '../../tokenizer/enums/token-type.enum';
-import {Token} from '../../tokenizer/models/token.model';
+import {AbstractToken} from '../../tokenizer/models/abstract.token';
+import {CloseParenthesisToken} from '../../tokenizer/models/close-parenthesis.token';
+import {NameToken} from '../../tokenizer/models/name.token';
+import {NumberToken} from '../../tokenizer/models/number.token';
+import {OpenParenthesisToken} from '../../tokenizer/models/open-parenthesis.token';
+import {StringToken} from '../../tokenizer/models/string.token';
 import {ExpressionNode} from '../models/expression.node';
 import {NumberNode} from '../models/number.node';
 import {ProgramNode} from '../models/program.node';
@@ -15,14 +19,14 @@ describe('LispParser', () => {
   });
   describe('#parse()', () => {
     it('should return a empty body Program node when tokens is an empty list', () => {
-      const tokens: Token[] = [];
+      const tokens: AbstractToken[] = [];
       expect(parser.parse(tokens)).to.be.deep.equal(new ProgramNode());
     });
     context('2 3', () => {
       it('should return the expected nodes', () => {
-        const tokens: Token[] = [
-          new Token(TokenType.NUMBER, '2'),
-          new Token(TokenType.NUMBER, '3'),
+        const tokens: AbstractToken[] = [
+          new NumberToken('2'),
+          new NumberToken('3'),
         ];
         expect(parser.parse(tokens))
           .to.be.deep.equal(
@@ -35,9 +39,9 @@ describe('LispParser', () => {
     });
     context('Hello World', () => {
       it('should return the expected nodes', () => {
-        const tokens: Token[] = [
-          new Token(TokenType.STRING, 'Hello'),
-          new Token(TokenType.STRING, 'World'),
+        const tokens: AbstractToken[] = [
+          new StringToken('Hello'),
+          new StringToken('World'),
         ];
         expect(parser.parse(tokens))
           .to.be.deep.equal(
@@ -50,12 +54,12 @@ describe('LispParser', () => {
     });
     context('(add 2 3)', () => {
       it('should return the expected nodes', () => {
-        const tokens: Token[] = [
-          new Token(TokenType.PARENTHESIS, '('),
-          new Token(TokenType.NAME, 'add'),
-          new Token(TokenType.NUMBER, '2'),
-          new Token(TokenType.NUMBER, '3'),
-          new Token(TokenType.PARENTHESIS, ')'),
+        const tokens: AbstractToken[] = [
+          new OpenParenthesisToken(),
+          new NameToken('add'),
+          new NumberToken('2'),
+          new NumberToken('3'),
+          new CloseParenthesisToken(),
         ];
         expect(parser.parse(tokens))
           .to.be.deep.equal(
@@ -70,16 +74,16 @@ describe('LispParser', () => {
     });
     context('(add 2 (subtract 4 1))', () => {
       it('should return the expected nodes', () => {
-        const tokens: Token[] = [
-          new Token(TokenType.PARENTHESIS, '('),
-          new Token(TokenType.NAME, 'add'),
-          new Token(TokenType.NUMBER, '2'),
-          new Token(TokenType.PARENTHESIS, '('),
-          new Token(TokenType.NAME, 'subtract'),
-          new Token(TokenType.NUMBER, '4'),
-          new Token(TokenType.NUMBER, '1'),
-          new Token(TokenType.PARENTHESIS, ')'),
-          new Token(TokenType.PARENTHESIS, ')'),
+        const tokens: AbstractToken[] = [
+          new OpenParenthesisToken(),
+          new NameToken('add'),
+          new NumberToken('2'),
+          new OpenParenthesisToken(),
+          new NameToken('subtract'),
+          new NumberToken('4'),
+          new NumberToken('1'),
+          new CloseParenthesisToken(),
+          new CloseParenthesisToken(),
         ];
         expect(parser.parse(tokens))
           .to.be.deep.equal(
