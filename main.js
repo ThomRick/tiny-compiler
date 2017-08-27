@@ -1,4 +1,4 @@
-const LispToCCompiler = require('./dist/compilers/lisp-to-c.compiler');
+const LispToCCompiler = require('./dist/compilers/impl/lisp-to-c.compiler');
 
 class Application {
   constructor() {}
