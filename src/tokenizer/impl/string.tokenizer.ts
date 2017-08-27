@@ -1,24 +1,25 @@
-import {TokenType} from '../enums/token-type.enum';
-import {Token} from '../models/token.model';
+import {AbstractToken} from '../models/abstract.token';
+import {NullToken} from '../models/null.token';
+import {StringToken} from '../models/string.token';
 import {ITokenizer} from '../tokenizer.interface';
 
 export class StringTokenizer implements ITokenizer {
   private pattern = /"/;
   constructor() {}
 
-  public tokenize(input: string): Token {
+  public tokenize(input: string): AbstractToken {
     if (this.pattern.test(input[0])) {
       return this.buildToken(input);
     } else {
-      return new Token();
+      return new NullToken();
     }
   }
 
-  private buildToken(input: string) {
+  private buildToken(input: string): AbstractToken {
     const inputs = input.split('"');
     if (inputs.length < 3) {
       throw new Error('Unterminated string');
     }
-    return new Token(TokenType.STRING, inputs[1]);
+    return new StringToken(inputs[1]);
   }
 }

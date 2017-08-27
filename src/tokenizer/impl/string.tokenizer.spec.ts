@@ -1,6 +1,6 @@
 import {expect} from 'chai';
-import {TokenType} from '../enums/token-type.enum';
-import {Token} from '../models/token.model';
+import {NullToken} from '../models/null.token';
+import {StringToken} from '../models/string.token';
 import {ITokenizer} from '../tokenizer.interface';
 import {StringTokenizer} from './string.tokenizer';
 
@@ -10,7 +10,7 @@ describe('StringTokenizer', () => {
     tokenizer = new StringTokenizer();
   });
   describe('#tokenize()', () => {
-    const outputToken = new Token(TokenType.STRING, 'Hello World');
+    const outputToken = new StringToken('Hello World');
 
     context('input contains only string character', () => {
       it('should return a string token', () => {
@@ -19,12 +19,12 @@ describe('StringTokenizer', () => {
     });
     context('input doesn\'t contain any string character', () => {
       it('should return a null token', () => {
-        expect(tokenizer.tokenize('123abc')).to.be.deep.equal(new Token());
+        expect(tokenizer.tokenize('123abc')).to.be.deep.equal(new NullToken());
       });
     });
     context('input doesn\'t start by a string character', () => {
       it('should return a null token', () => {
-        expect(tokenizer.tokenize('abc"Hello World"')).to.be.deep.equal(new Token());
+        expect(tokenizer.tokenize('abc"Hello World"')).to.be.deep.equal(new NullToken());
       });
     });
     context('input doesn\'t contain only string character', () => {

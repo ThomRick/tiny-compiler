@@ -1,5 +1,6 @@
-import {TokenType} from '../enums/token-type.enum';
-import {Token} from '../models/token.model';
+import {AbstractToken} from '../models/abstract.token';
+import {NullToken} from '../models/null.token';
+import {OpenParenthesisToken} from '../models/open-parenthesis.token';
 import {ITokenizer} from '../tokenizer.interface';
 
 export class OpenParenthesisTokenizer implements ITokenizer {
@@ -7,11 +8,11 @@ export class OpenParenthesisTokenizer implements ITokenizer {
 
   constructor() {}
 
-  public tokenize(input: string): Token {
+  public tokenize(input: string): AbstractToken {
     if (this.pattern.test(input[0])) {
-      return new Token(TokenType.PARENTHESIS, '(');
+      return new OpenParenthesisToken();
     } else {
-      return new Token();
+      return new NullToken();
     }
   }
 }

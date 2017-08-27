@@ -1,5 +1,6 @@
-import {TokenType} from '../enums/token-type.enum';
-import {Token} from '../models/token.model';
+import {AbstractToken} from '../models/abstract.token';
+import {NameToken} from '../models/name.token';
+import {NullToken} from '../models/null.token';
 import {ITokenizer} from '../tokenizer.interface';
 
 export class NameTokenizer implements ITokenizer {
@@ -7,15 +8,15 @@ export class NameTokenizer implements ITokenizer {
 
   constructor() {}
 
-  public tokenize(input: string): Token {
+  public tokenize(input: string): AbstractToken {
     if (this.pattern.test(input[0])) {
       return this.buildToken(input);
     } else {
-      return new Token();
+      return new NullToken();
     }
   }
 
-  private buildToken(input: string): Token {
+  private buildToken(input: string): AbstractToken {
     const inputs = input.split('');
     const value: string = inputs.reduce((previous, current, index) => {
       if (this.pattern.test(current) && index <= previous.length) {
@@ -24,6 +25,6 @@ export class NameTokenizer implements ITokenizer {
         return previous;
       }
     }, '');
-    return new Token(TokenType.NAME, value);
+    return new NameToken(value);
   }
 }

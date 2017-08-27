@@ -1,5 +1,5 @@
 import {TokenType} from '../enums/token-type.enum';
-import {Token} from '../models/token.model';
+import {AbstractToken} from '../models/abstract.token';
 import {ITokenizer} from '../tokenizer.interface';
 import {CloseParenthesisTokenizer} from './close-parenthesis.tokenizer';
 import {NameTokenizer} from './name.tokenizer';
@@ -18,8 +18,8 @@ export class TokenizerImpl implements ITokenizer {
     new CloseParenthesisTokenizer(),
   ]) {}
 
-  public tokenize(input: string): Token[] {
-    let tokens: Token[] = [];
+  public tokenize(input: string): AbstractToken[] {
+    let tokens: AbstractToken[] = [];
     while (input.length !== 0) {
       const { iterationTokens, afterIterationInput } = this.tokenizeIteration(input);
       tokens = tokens.concat(iterationTokens);
@@ -28,10 +28,10 @@ export class TokenizerImpl implements ITokenizer {
     return tokens;
   }
 
-  private tokenizeIteration(afterIterationInput: string): { iterationTokens: Token[], afterIterationInput: string } {
-    const iterationTokens: Token[] = [];
+  private tokenizeIteration(afterIterationInput: string): { iterationTokens: AbstractToken[], afterIterationInput: string } {
+    const iterationTokens: AbstractToken[] = [];
     this.tokenizers.forEach((tokenizer) => {
-      const token: Token = tokenizer.tokenize(afterIterationInput);
+      const token: AbstractToken = tokenizer.tokenize(afterIterationInput);
       if (token.length() !== 0) {
         this.addToken(token, iterationTokens);
         afterIterationInput = this.updateInput(afterIterationInput, token);
@@ -43,14 +43,14 @@ export class TokenizerImpl implements ITokenizer {
     };
   }
 
-  private addToken(token: Token, iterationTokens: Token[]) {
-    if (token.type !== TokenType.WHITE_SPACE) {
+  private addToken(token: AbstractToken, iterationTokens: AbstractToken[]) {
+    if (token.getType() !== TokenType.WHITE_SPACE) {
       iterationTokens.push(token);
     }
   }
 
-  private updateInput(afterIterationInput: string, token: Token) {
-    if (token.type === TokenType.STRING) {
+  private updateInput(afterIterationInput: string, token: AbstractToken) {
+    if (token.getType() === TokenType.STRING) {
       return afterIterationInput.slice(token.length() + 2, afterIterationInput.length);
     } else {
       return afterIterationInput.slice(token.length(), afterIterationInput.length);
