@@ -1,4 +1,4 @@
-const LispToCCompiler = require('./dist/compilers/impl/lisp-to-c.compiler');
+const LispToCCompiler = require('./dist/compilers/impl/lisp-to-c.compiler').LispToCCompiler;
 
 class Application {
   constructor() {}
@@ -9,7 +9,7 @@ class Application {
       throw new Error('Supply expression to compile');
     }
     const lispCode = args[0];
-    const compiler = new LispToCCompiler.LispToCCompiler();
+    const compiler = new LispToCCompiler();
     console.log(`compile: ${ lispCode } => ${ compiler.compile(lispCode) }`);
   }
 }
