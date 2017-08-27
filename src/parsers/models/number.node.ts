@@ -4,8 +4,8 @@ import {AbstractNode} from './abstract.node';
 export class NumberNode extends AbstractNode {
   private type = NodeType.NUMBER;
 
-  constructor(private value: string, body: AbstractNode[] = []) {
-    super(body);
+  constructor(private value: string) {
+    super();
   }
 
   public getType(): NodeType {

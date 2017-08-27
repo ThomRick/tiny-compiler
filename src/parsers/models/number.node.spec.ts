@@ -11,4 +11,9 @@ describe('NumberNode', () => {
       expect(node.getType()).to.equal(NodeType.NUMBER);
     });
   });
+  describe('#getValue()', () => {
+    it('should return a NumberLiteral node type', () => {
+      expect((node as NumberNode).getValue()).to.equal('0');
+    });
+  });
 });

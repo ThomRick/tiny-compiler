@@ -11,4 +11,9 @@ describe('StringNode', () => {
       expect(node.getType()).to.equal(NodeType.STRING);
     });
   });
+  describe('#getValue()', () => {
+    it('should return the node value', () => {
+      expect((node as StringNode).getValue()).to.equal('');
+    });
+  });
 });

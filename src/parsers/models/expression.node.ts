@@ -4,8 +4,8 @@ import {AbstractNode} from './abstract.node';
 export class ExpressionNode extends AbstractNode {
   private type = NodeType.EXPRESSION;
 
-  constructor(private name: string, body = []) {
-    super(body);
+  constructor(private name: string, private nodes: AbstractNode[] = []) {
+    super();
   }
 
   public getType(): NodeType {
@@ -14,5 +14,13 @@ export class ExpressionNode extends AbstractNode {
 
   public getName(): string {
     return this.name;
+  }
+
+  public getNodes(): AbstractNode[] {
+    return this.nodes;
+  }
+
+  public addNode(node: AbstractNode): void {
+    this.nodes.push(node);
   }
 }

@@ -15,7 +15,7 @@ export class LispParser implements IParser {
     return this.parseTokensIn(program, tokens);
   }
 
-  private parseTokensIn(node: AbstractNode, tokens: AbstractToken[]): AbstractNode {
+  private parseTokensIn(node: ProgramNode | ExpressionNode, tokens: AbstractToken[]): AbstractNode {
     while (tokens.length !== 0) {
       const token: AbstractToken = tokens.shift();
       switch (token.getType()) {

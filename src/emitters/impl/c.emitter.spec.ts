@@ -8,9 +8,7 @@ import {CEmitter} from './c.emitter';
 
 describe('CEmitter', () => {
   let emitter: IEmitter;
-
   beforeEach(() => emitter = new CEmitter());
-
   describe('#emit()', () => {
     context('input is a NumberLiteral node type', () => {
       it('should use emitNumber()', () => {
