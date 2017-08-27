@@ -19,8 +19,6 @@ export class CEmitter implements IEmitter {
         return this.emitExpression(node as ExpressionNode);
       case NodeType.PROGRAM:
         return this.emitProgram(node as ProgramNode);
-      default:
-        throw new Error(`Unknown node type : ${ node.getType() }`);
     }
   }
 
