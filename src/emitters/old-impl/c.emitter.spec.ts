@@ -1,6 +1,6 @@
 import {expect} from 'chai';
+import {NodeType} from '../../utils/node.type';
 import {CEmitter} from './c.emitter';
-import {NodeType} from '../utils/node.type';
 
 describe('CEmitter', () => {
   let emitter;

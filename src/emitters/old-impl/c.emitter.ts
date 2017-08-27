@@ -1,4 +1,4 @@
-import {NodeType} from '../utils/node.type';
+import {NodeType} from '../../utils/node.type';
 
 export class CEmitter {
   constructor() {}

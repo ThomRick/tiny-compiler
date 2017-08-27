@@ -1,4 +1,4 @@
-import {CEmitter} from '../emitters/c.emitter';
+import {CEmitter} from '../emitters/old-impl/c.emitter';
 import {LispParser} from '../parsers/old-impl/lisp.parser';
 import {Tokenizer} from '../tokenizer/impl-old/tokenizer';
 

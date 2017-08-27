@@ -11,4 +11,8 @@ export class StringNode extends AbstractNode {
   public getType(): NodeType {
     return this.type;
   }
+
+  public getValue(): string {
+    return this.value;
+  }
 }

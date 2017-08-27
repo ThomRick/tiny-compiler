@@ -11,4 +11,8 @@ export class ExpressionNode extends AbstractNode {
   public getType(): NodeType {
     return this.type;
   }
+
+  public getName(): string {
+    return this.name;
+  }
 }

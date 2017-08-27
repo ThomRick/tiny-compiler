@@ -5,7 +5,7 @@ export abstract class AbstractNode {
 
   public abstract getType(): NodeType;
 
-  public getBody(): AbstractNode[] {
+  public getNodes(): AbstractNode[] {
     return this.body;
   }
 

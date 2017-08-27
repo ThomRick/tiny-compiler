@@ -5,7 +5,7 @@ import {NumberNode} from './number.node';
 
 describe('NumberNode', () => {
   let node: AbstractNode;
-  beforeEach(() => node = new NumberNode());
+  beforeEach(() => node = new NumberNode('0'));
   describe('#getType()', () => {
     it('should return a NumberLiteral node type', () => {
       expect(node.getType()).to.equal(NodeType.NUMBER);
