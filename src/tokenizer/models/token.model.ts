@@ -1,5 +1,5 @@
 import {isNullOrUndefined} from 'util';
-import {TokenType} from '../../utils/token.type';
+import {TokenType} from '../enums/token-type.enum';
 
 export class Token {
   constructor(private _type: TokenType = null, private _value: string = null) {}

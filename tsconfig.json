@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "declaration": false,
+    "declaration": true,
     "noImplicitAny": false,
     "noUnusedLocals": false,
     "removeComments": true,
@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": false,
-    "allowJs": true,
+    "allowJs": false,
     "outDir": "dist",
     "typeRoots": [
       "node_modules/@types"
