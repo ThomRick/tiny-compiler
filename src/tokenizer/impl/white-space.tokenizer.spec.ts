@@ -1,10 +1,12 @@
 import {expect} from 'chai';
-import {TokenFactory} from '../../../utils/token.factory';
+import {TokenType} from '../enums/token-type.enum';
+import {Token} from '../models/token.model';
+import {ITokenizer} from '../tokenizer.interface';
 import {WhiteSpaceTokenizer} from './white-space.tokenizer';
 
 describe('WhiteSpaceTokenizer', () => {
   describe('#tokenize()', () => {
-    let tokenizer;
+    let tokenizer: ITokenizer;
 
     beforeEach(() => {
       tokenizer = new WhiteSpaceTokenizer();
@@ -12,12 +14,12 @@ describe('WhiteSpaceTokenizer', () => {
 
     context('input start with a white space character', () => {
       it('should return a white space token', () => {
-        expect(tokenizer.tokenize(' ', 0)).to.be.deep.equal(TokenFactory.whiteSpace());
+        expect(tokenizer.tokenize(' ')).to.be.deep.equal(new Token(TokenType.WHITE_SPACE, ' '));
       });
     });
     context('input doesn\'t start by a white space character', () => {
       it('should return a null token', () => {
-        expect(tokenizer.tokenize('abc ', 0)).to.be.deep.equal(TokenFactory.nullToken());
+        expect(tokenizer.tokenize('abc ')).to.be.deep.equal(new Token());
       });
     });
   });

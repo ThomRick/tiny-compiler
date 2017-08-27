@@ -1,5 +1,5 @@
-import {PatternEnum} from '../../../utils/pattern.enum';
-import {TokenFactory} from '../../../utils/token.factory';
+import {PatternEnum} from '../../utils/pattern.enum';
+import {TokenFactory} from '../../utils/token.factory';
 
 export class WhiteSpaceTokenizer {
   constructor() {}

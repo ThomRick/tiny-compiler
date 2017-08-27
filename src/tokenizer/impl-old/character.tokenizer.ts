@@ -1,4 +1,4 @@
-import {TokenFactory} from '../../../utils/token.factory';
+import {TokenFactory} from '../../utils/token.factory';
 
 export class CharacterTokenizer {
   constructor() {}

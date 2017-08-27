@@ -1,13 +1,12 @@
-import {CloseParenthesisTokenizer} from './lib/character/close-parenthesis.tokenizer';
-import {OpenParenthesisTokenizer} from './lib/character/open-parenthesis.tokenizer';
-import {NameTokenizer} from './lib/pattern/name.tokenizer';
-import {NumberTokenizer} from './lib/pattern/number.tokenizer';
-import {StringTokenizer} from './lib/string/string.tokenizer';
-import {WhiteSpaceTokenizer} from './lib/white-space/white-space.tokenizer';
+import {CloseParenthesisTokenizer} from './close-parenthesis.tokenizer';
+import {NameTokenizer} from './name.tokenizer';
+import {NumberTokenizer} from './number.tokenizer';
+import {OpenParenthesisTokenizer} from './open-parenthesis.tokenizer';
+import {StringTokenizer} from './string.tokenizer';
+import {WhiteSpaceTokenizer} from './white-space.tokenizer';
 
 export class Tokenizer {
-
-  constructor(private tokenizers = [
+  constructor(tokenizers = [
     new OpenParenthesisTokenizer(),
     new CloseParenthesisTokenizer(),
     new NumberTokenizer(),
@@ -15,8 +14,8 @@ export class Tokenizer {
     new StringTokenizer(),
     new WhiteSpaceTokenizer(),
   ]) {
+    this.tokenizers = tokenizers;
   }
-
   tokenize(input) {
     let current = 0;
     const tokens = [];

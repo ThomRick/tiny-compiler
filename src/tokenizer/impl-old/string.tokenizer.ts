@@ -1,5 +1,5 @@
-import {TokenFactory} from '../../../utils/token.factory';
-import {TokenType} from '../../../utils/token.type';
+import {TokenFactory} from '../../utils/token.factory';
+import {TokenType} from '../../utils/token.type';
 
 export class StringTokenizer {
   constructor() {}

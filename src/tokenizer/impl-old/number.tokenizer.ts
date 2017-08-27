@@ -1,5 +1,5 @@
-import {PatternEnum} from '../../../utils/pattern.enum';
-import {TokenType} from '../../../utils/token.type';
+import {PatternEnum} from '../../utils/pattern.enum';
+import {TokenType} from '../../utils/token.type';
 import {PatternTokenizer} from './pattern.tokenizer';
 
 export class NumberTokenizer {

@@ -1,13 +1,12 @@
-import {Tokenizer} from './tokenizer';
 import {expect} from 'chai';
-import {TokenType} from '../utils/token.type';
-import {NameTokenizer} from './lib/pattern/name.tokenizer';
-import {StringTokenizer} from './lib/string/string.tokenizer';
-import {NumberTokenizer} from './lib/pattern/number.tokenizer';
-import {WhiteSpaceTokenizer} from './lib/white-space/white-space.tokenizer';
-import {OpenParenthesisTokenizer} from './lib/character/open-parenthesis.tokenizer';
-import {CloseParenthesisTokenizer} from './lib/character/close-parenthesis.tokenizer';
-
+import {TokenType} from '../../utils/token.type';
+import {CloseParenthesisTokenizer} from './close-parenthesis.tokenizer';
+import {NameTokenizer} from './name.tokenizer';
+import {NumberTokenizer} from './number.tokenizer';
+import {OpenParenthesisTokenizer} from './open-parenthesis.tokenizer';
+import {StringTokenizer} from './string.tokenizer';
+import {Tokenizer} from './tokenizer';
+import {WhiteSpaceTokenizer} from './white-space.tokenizer';
 
 describe('Tokenizer', () => {
   let tokenizer;
@@ -24,7 +23,7 @@ describe('Tokenizer', () => {
         new NumberTokenizer(),
         new NameTokenizer(),
         new StringTokenizer(),
-        new WhiteSpaceTokenizer()
+        new WhiteSpaceTokenizer(),
       ];
       expect(tokenizer.tokenizers).to.be.deep.equal(tokenizers);
     });
@@ -39,7 +38,7 @@ describe('Tokenizer', () => {
           { type: TokenType.NAME,        value: 'add' },
           { type: TokenType.NUMBER,      value: '2'   },
           { type: TokenType.NUMBER,      value: '3'   },
-          { type: TokenType.PARENTHESIS, value: ')'   }
+          { type: TokenType.PARENTHESIS, value: ')'   },
         ];
         expect(tokenizer.tokenize(input)).to.be.deep.equal(expectedTokens);
       });
@@ -50,7 +49,7 @@ describe('Tokenizer', () => {
         const expectedTokens = [
           { type: TokenType.PARENTHESIS, value: '('   },
           { type: TokenType.NAME,        value: 'add' },
-          { type: TokenType.NUMBER,      value: '2'   }
+          { type: TokenType.NUMBER,      value: '2'   },
         ];
         expect(tokenizer.tokenize(input)).to.be.deep.equal(expectedTokens);
       });
@@ -67,7 +66,7 @@ describe('Tokenizer', () => {
           { type: TokenType.STRING,      value: '314'      },
           { type: TokenType.NUMBER,      value: '2'        },
           { type: TokenType.PARENTHESIS, value: ')'        },
-          { type: TokenType.PARENTHESIS, value: ')'        }
+          { type: TokenType.PARENTHESIS, value: ')'        },
         ];
         expect(tokenizer.tokenize(input)).to.be.deep.equal(expectedTokens);
       });

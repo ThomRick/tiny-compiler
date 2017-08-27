@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import {NameTokenizer} from './name.tokenizer';
 import {PatternTokenizer} from './pattern.tokenizer';
-import {TokenFactory} from '../../../utils/token.factory';
+import {TokenFactory} from '../../utils/token.factory';
 
 describe('NameTokenizer', () => {
   let tokenizer;

@@ -1,4 +1,4 @@
-import {TokenType} from '../../../utils/token.type';
+import {TokenType} from '../../utils/token.type';
 import {CharacterTokenizer} from './character.tokenizer';
 
 export class OpenParenthesisTokenizer {

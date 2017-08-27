@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "nyc mocha src/**/*.spec.ts src/tokenizer/lib/**/*.spec.ts --require ts-node/register --reporter spec",
+    "test": "nyc mocha src/tokenizer/models/*.spec.ts src/tokenizer/impl/*.spec.ts --require ts-node/register --reporter spec",
     "start": "node main.js",
     "lint": "tslint --project tsconfig.json --config tslint.json"
   },
