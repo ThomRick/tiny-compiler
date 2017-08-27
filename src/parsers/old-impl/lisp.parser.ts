@@ -1,5 +1,5 @@
-import {NodeType} from '../utils/node.type';
-import {TokenType} from '../utils/token.type';
+import {NodeType} from '../../utils/node.type';
+import {TokenType} from '../../utils/token.type';
 
 export class LispParser {
   constructor() {}
