@@ -1,8 +1,8 @@
 import {expect} from 'chai';
+import {TokenType} from '../enums/token-type.enum';
 import {Token} from '../models/token.model';
 import {ITokenizer} from '../tokenizer.interface';
 import {TokenizerImpl} from './tokenizer.impl';
-import {TokenType} from '../enums/token-type.enum';
 
 describe('TokenizerImpl', () => {
   let tokenizer: ITokenizer;

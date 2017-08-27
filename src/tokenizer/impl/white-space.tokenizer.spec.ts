@@ -7,11 +7,9 @@ import {WhiteSpaceTokenizer} from './white-space.tokenizer';
 describe('WhiteSpaceTokenizer', () => {
   describe('#tokenize()', () => {
     let tokenizer: ITokenizer;
-
     beforeEach(() => {
       tokenizer = new WhiteSpaceTokenizer();
     });
-
     context('input start with a white space character', () => {
       it('should return a white space token', () => {
         expect(tokenizer.tokenize(' ')).to.be.deep.equal(new Token(TokenType.WHITE_SPACE, ' '));
@@ -23,5 +21,4 @@ describe('WhiteSpaceTokenizer', () => {
       });
     });
   });
-
 });

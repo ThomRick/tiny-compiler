@@ -5,8 +5,8 @@ import {CloseParenthesisTokenizer} from './close-parenthesis.tokenizer';
 import {NameTokenizer} from './name.tokenizer';
 import {NumberTokenizer} from './number.tokenizer';
 import {OpenParenthesisTokenizer} from './open-parenthesis.tokenizer';
-import {WhiteSpaceTokenizer} from './white-space.tokenizer';
 import {StringTokenizer} from './string.tokenizer';
+import {WhiteSpaceTokenizer} from './white-space.tokenizer';
 
 export class TokenizerImpl implements ITokenizer {
   constructor(private tokenizers = [
